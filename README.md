@@ -34,6 +34,7 @@ $ pip install kneed
 **Clone from GitHub**
 ```bash
 $ git clone https://github.com/eduamf/kneed.git
+$ cd kneed
 $ python setup.py install
 ```
 
