@@ -306,21 +306,15 @@ class KneeLocator(object):
 
         return knee, norm_knee
 
-<<<<<<< HEAD
+
     def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None, 
                              title_label: Optional[str] = None):
-=======
-    def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None, myTitle: str = ""):
->>>>>>> be35da1020285ac2d5c813c954c535e3cf787617
+
         """Plot the normalized curve, the difference curve (x_difference, y_normalized) and the knee, if it exists.
 
         :param figsize: Optional[Tuple[int, int]
             The figure size of the plot. Example (12, 8)
-<<<<<<< HEAD
         :param title_label: Optional[str]
-=======
-        :param myTitle: str
->>>>>>> be35da1020285ac2d5c813c954c535e3cf787617
             The default title is "Normalized Knee Point"
         :return: NoReturn
         """
@@ -329,19 +323,12 @@ class KneeLocator(object):
         if figsize is None:
             figsize = (6, 6)
             
-<<<<<<< HEAD
         if title_label is None:
             title_label = "Normalized Knee Point"
 
         plt.figure(figsize=figsize)
         plt.title(label=title_label)
-=======
-        if len(myTitle) == 0:
-            myTitle = "Normalized Knee Point"
 
-        plt.figure(figsize=figsize)
-        plt.title(label=myTitle)
->>>>>>> be35da1020285ac2d5c813c954c535e3cf787617
         plt.plot(self.x_normalized, self.y_normalized, "b", label="normalized curve")
         plt.plot(self.x_difference, self.y_difference, "r", label="difference curve")
         plt.xticks(
@@ -360,22 +347,16 @@ class KneeLocator(object):
         )
         plt.legend(loc="best")
 
-<<<<<<< HEAD
+
     def plot_knee(self, figsize: Optional[Tuple[int, int]] = None,
                   title_label: Optional[str] = None):
-=======
-    def plot_knee(self, figsize: Optional[Tuple[int, int]] = None,  myTitle: str = ""):
->>>>>>> be35da1020285ac2d5c813c954c535e3cf787617
+
         """
         Plot the curve and the knee, if it exists
 
         :param figsize: Optional[Tuple[int, int]
             The figure size of the plot. Example (12, 8)
-<<<<<<< HEAD
         :param title_label: Optional[str]
-=======
-        :param myTitle: str
->>>>>>> be35da1020285ac2d5c813c954c535e3cf787617
             The default title is "Knee Point"
         :return: NoReturn
         """
@@ -384,19 +365,11 @@ class KneeLocator(object):
         if figsize is None:
             figsize = (6, 6)
             
-<<<<<<< HEAD
         if title_label is None:
             title_label = "Knee Point"
 
         plt.figure(figsize=figsize)
         plt.title(label=title_label)
-=======
-        if len(myTitle) == 0:
-            myTitle = "Knee Point"
-
-        plt.figure(figsize=figsize)
-        plt.title(label=myTitle)
->>>>>>> be35da1020285ac2d5c813c954c535e3cf787617
         plt.plot(self.x, self.y, "b", label="data")
         plt.vlines(
             self.knee, plt.ylim()[0], plt.ylim()[1], linestyles="--", label="knee/elbow"
