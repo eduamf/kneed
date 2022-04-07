@@ -306,20 +306,25 @@ class KneeLocator(object):
 
         return knee, norm_knee
 
-    def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None, title ="Normalized Knee Point"):
+    def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None, myTitle: str = ""):
         """Plot the normalized curve, the difference curve (x_difference, y_normalized) and the knee, if it exists.
 
         :param figsize: Optional[Tuple[int, int]
             The figure size of the plot. Example (12, 8)
+        :param myTitle: str
+            The default title is "Normalized Knee Point"
         :return: NoReturn
         """
         import matplotlib.pyplot as plt
 
         if figsize is None:
             figsize = (6, 6)
+            
+        if len(myTitle) == 0:
+            myTitle = "Normalized Knee Point"
 
         plt.figure(figsize=figsize)
-        plt.title(title)
+        plt.title(label=myTitle)
         plt.plot(self.x_normalized, self.y_normalized, "b", label="normalized curve")
         plt.plot(self.x_difference, self.y_difference, "r", label="difference curve")
         plt.xticks(
@@ -338,21 +343,26 @@ class KneeLocator(object):
         )
         plt.legend(loc="best")
 
-    def plot_knee(self, figsize: Optional[Tuple[int, int]] = None, title ="Knee Point"):
+    def plot_knee(self, figsize: Optional[Tuple[int, int]] = None,  myTitle: str = ""):
         """
         Plot the curve and the knee, if it exists
 
         :param figsize: Optional[Tuple[int, int]
             The figure size of the plot. Example (12, 8)
+        :param myTitle: str
+            The default title is "Knee Point"
         :return: NoReturn
         """
         import matplotlib.pyplot as plt
 
         if figsize is None:
             figsize = (6, 6)
+            
+        if len(myTitle) == 0:
+            myTitle = "Knee Point"
 
         plt.figure(figsize=figsize)
-        plt.title(title)
+        plt.title(label=myTitle)
         plt.plot(self.x, self.y, "b", label="data")
         plt.vlines(
             self.knee, plt.ylim()[0], plt.ylim()[1], linestyles="--", label="knee/elbow"
