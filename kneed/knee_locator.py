@@ -308,7 +308,9 @@ class KneeLocator(object):
 
 
     def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None, 
-                             title_label: Optional[str] = None):
+                             title_label: Optional[str] = None,
+                             x_label: Optional[str] = None,
+                             y_label: Optional[str] = None):
 
         """Plot the normalized curve, the difference curve (x_difference, y_normalized) and the knee, if it exists.
 
@@ -337,6 +339,11 @@ class KneeLocator(object):
         plt.yticks(
             np.arange(self.y_difference.min(), self.y_normalized.max() + 0.1, 0.1)
         )
+        
+        if not (x_label is None):
+            plt.xlabel(x_label)
+        if not (y_label is None):
+            plt.ylabel(y_label)
 
         plt.vlines(
             self.norm_knee,
@@ -349,7 +356,9 @@ class KneeLocator(object):
 
 
     def plot_knee(self, figsize: Optional[Tuple[int, int]] = None,
-                  title_label: Optional[str] = None):
+                  title_label: Optional[str] = None,
+                  x_label: Optional[str] = None,
+                  y_label: Optional[str] = None):
 
         """
         Plot the curve and the knee, if it exists
@@ -371,6 +380,12 @@ class KneeLocator(object):
         plt.figure(figsize=figsize)
         plt.title(label=title_label)
         plt.plot(self.x, self.y, "b", label="data")
+                
+        if not (x_label is None):
+            plt.xlabel(x_label)
+        if not (y_label is None):
+            plt.ylabel(y_label)
+        
         plt.vlines(
             self.knee, plt.ylim()[0], plt.ylim()[1], linestyles="--", label="knee/elbow"
         )
