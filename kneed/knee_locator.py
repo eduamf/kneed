@@ -306,7 +306,7 @@ class KneeLocator(object):
 
         return knee, norm_knee
 
-    def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None, title = "Normalized Knee Point"):
+    def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None, title ="Normalized Knee Point"):
         """Plot the normalized curve, the difference curve (x_difference, y_normalized) and the knee, if it exists.
 
         :param figsize: Optional[Tuple[int, int]
@@ -338,7 +338,7 @@ class KneeLocator(object):
         )
         plt.legend(loc="best")
 
-    def plot_knee(self, figsize: Optional[Tuple[int, int]] = None, title = "Knee Point"):
+    def plot_knee(self, figsize: Optional[Tuple[int, int]] = None, title ="Knee Point"):
         """
         Plot the curve and the knee, if it exists
 
