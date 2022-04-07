@@ -306,7 +306,7 @@ class KneeLocator(object):
 
         return knee, norm_knee
 
-    def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None):
+    def plot_knee_normalized(self, figsize: Optional[Tuple[int, int]] = None, title = "Normalized Knee Point"):
         """Plot the normalized curve, the difference curve (x_difference, y_normalized) and the knee, if it exists.
 
         :param figsize: Optional[Tuple[int, int]
@@ -319,7 +319,7 @@ class KneeLocator(object):
             figsize = (6, 6)
 
         plt.figure(figsize=figsize)
-        plt.title("Normalized Knee Point")
+        plt.title(nTitle)
         plt.plot(self.x_normalized, self.y_normalized, "b", label="normalized curve")
         plt.plot(self.x_difference, self.y_difference, "r", label="difference curve")
         plt.xticks(
@@ -338,7 +338,7 @@ class KneeLocator(object):
         )
         plt.legend(loc="best")
 
-    def plot_knee(self, figsize: Optional[Tuple[int, int]] = None):
+    def plot_knee(self, figsize: Optional[Tuple[int, int]] = None, title = "Knee Point"):
         """
         Plot the curve and the knee, if it exists
 
@@ -352,7 +352,7 @@ class KneeLocator(object):
             figsize = (6, 6)
 
         plt.figure(figsize=figsize)
-        plt.title("Knee Point")
+        plt.title(title)
         plt.plot(self.x, self.y, "b", label="data")
         plt.vlines(
             self.knee, plt.ylim()[0], plt.ylim()[1], linestyles="--", label="knee/elbow"
