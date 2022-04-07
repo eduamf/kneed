@@ -33,7 +33,7 @@ $ pip install kneed
 
 **Clone from GitHub**
 ```bash
-$ git clone https://github.com/arvkevi/kneed.git
+$ git clone https://github.com/eduamf/kneed.git
 $ python setup.py install
 ```
 
