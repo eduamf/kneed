@@ -319,7 +319,7 @@ class KneeLocator(object):
             figsize = (6, 6)
 
         plt.figure(figsize=figsize)
-        plt.title(nTitle)
+        plt.title(title)
         plt.plot(self.x_normalized, self.y_normalized, "b", label="normalized curve")
         plt.plot(self.x_difference, self.y_difference, "r", label="difference curve")
         plt.xticks(
